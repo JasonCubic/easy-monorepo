@@ -1,0 +1,18 @@
+{
+  "name": "easy-monorepo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "packages/app/index.js",
+  "scripts": {
+    "start": "node .",
+    "bootstrap": "node ./packages-exec.js npm install --no-package-lock --verbose",
+    "clean": "node ./packages-exec.js if exist node_modules rmdir /s /q node_modules",
+    "postinstall": "npm run clean && npm run bootstrap",
+    "bash_bootstrap": "bash ./packages_exec.sh 'npm install --no-package-lock'",
+    "bash_clean": "bash ./packages_exec.sh 'rm -rf node_modules'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
